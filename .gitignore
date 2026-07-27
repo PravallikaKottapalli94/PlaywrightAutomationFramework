@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Reports
+reports/
+playwright-report/
+blob-report/
+test-results/
+
+# Authentication
+playwright/.auth/
+
+# Playwright Cache
+playwright/.cache/
+
+# Logs
+logs/
+
+# Screenshots
+screenshots/
+
+# Videos
+videos/
+
+# Traces
+traces/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
