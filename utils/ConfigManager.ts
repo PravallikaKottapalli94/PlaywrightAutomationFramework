@@ -27,7 +27,6 @@ export class ConfigManager {
     }
 
     static get headless(): boolean {
-        return process.env.HEADLESS === 'false';
+        return process.env.HEADLESS === 'true';
     }
-
 }
