@@ -26,11 +26,15 @@ export class ProductsPage extends BasePage{
         return this.page.getByText(productName);
     }
 
-    async closeAdvertisementIfPresent(): Promise<void> {
-        if(await this.closeAdButton.isVisible()){
-            await this.closeAdButton.click();
-        }
+   async closeAdvertisementIfPresent(): Promise<void> {
+    try {
+        await this.closeAdButton.waitFor({ state: 'visible', timeout: 5000 });
+        await this.closeAdButton.click();
+        console.log("Advertisement closed.");
+    } catch {
+        console.log("Advertisement not displayed.");
     }
+}
 
     async addProductToCart(): Promise<void> {
         await this.addToCart.click()
