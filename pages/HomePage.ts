@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+import { Locator, Page , expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class HomePage extends BasePage {
@@ -20,6 +20,10 @@ export class HomePage extends BasePage {
 
     async goToProductsPage(): Promise<void> {
         await this.click(this.productsLink);
+        // Wait for Products page to load
+        await this.page.waitForURL(/products/);
+        // Wait until search textbox is visible
+        await expect(this.page.locator("#search_product")).toBeVisible({timeout: 15000,});
     }
     
     async goToCartPage(): Promise<void> {

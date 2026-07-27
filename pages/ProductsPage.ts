@@ -18,6 +18,7 @@ export class ProductsPage extends BasePage{
     }
 
     async searchProduct(productName:string): Promise<void>{
+        await expect(this.searchTextbox).toBeVisible({timeout: 15000});
         await this.fill(this.searchTextbox, productName);
         await this.click(this.searchButton);
     }
